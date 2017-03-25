@@ -1,0 +1,36 @@
+<?php
+
+
+
+# mt_rand ile onaltılık dönüştürücü fonksiyonu kullanılarak rastgele div arka plan ataması yapalım .
+
+$renk_kodu = sprintf("%03x%03x",rand(0,255),rand(0,255));
+
+// # işareti ile php değişkenini , echo içerisinde kullanıyoruz.
+
+echo "<style>
+
+.renk{
+    
+    width:400px; padding:5px; border;1px solid silver;
+    background:#$renk_kodu 
+    
+}
+
+</style>
+
+
+";
+
+
+?>
+
+<div class="renk">
+
+    <?php
+
+        echo $renk_kodu;
+
+    ?>
+
+</div>

@@ -173,7 +173,35 @@ echo (float)$sayi6;
 // \$    -> Tek başına veya çift tırnak işareti içerisinde değişkeni etkisiz hale getirmek için kullanılır.
 // \n \r \t -> n -> html ' de kullanılar br anlamını taşır. Çift tırnak işareti içerisinde kullanılır.
 // \n \r \t -> t ise boşluk verir. Html ' de ki &nbsp; ile aynı anlamı taşır.
-// \n \r \t -> r ise windows ' a özgü satır başı işlemi yapar. 
+// \n \r \t -> r ise windows ' a özgü satır başı işlemi yapar.
+
+# Karmaşık ifadeler , süslü parantez içerisine yazılmalıdır. Örneğin ;
+# $dizi['soyad'] $_POST['isim'] gibi değişkenler çift tırnak işareti içerisinde yazılırken { buraya yazılmaldıır. }
+# . işaretide aynı görevi üstlenir.
+
+#printf ve sprintf kullanımı , ikiside aynı anlamı taşır. sprintf ' in tek farkı , değişime uğramış değişkeni echo ile ekrana yazdırabiliriz.
+
+echo "<br> <br> <br> ";
+
+$urun_fiyat = 50.99;
+$kdv_durum = "KDV Dahil";
+printf('Ürünün fiyatı %s %d TL',$kdv_durum,$urun_fiyat); // Ürünün fiyatı KDV dahil 50 ' TL yazar ;
+
+# %s -> String ' e çevirir , $d -> Tam sayıya çevirir , %x -> Onaltılık sayıya çevirir , %o veriyi sekizlik sayı yapar , %f Sayıyı noktalı sayı yapar.
+
+#Bazı durumlarda , sayıları ve kelimeleri belli uzunlukta biçimlendirmek gerekebilir. Örneğin bir sayınının zorunlu olarak 4 basamak olması isteniyor gibi. Sayfa 55
+
+
+#Örnekler Dizisi
+
+#printf ve özel karakterler ile ilgili örnekler dizisini içermektedir.
+echo "<br>";
+printf("%05d",88); // 00088 olacak. 5 basamağa tamamla , soluna 0 at.
+echo "<br>";
+printf("%09.2f",719); // 000719.00  .2 değeri noktadan sonra ki basamak sayısı , nokta dahil 9 basamağa tamamlar.
+echo "<br>";
+$fiyat = sprintf("%01.2f",45); // Maksimum 1 basamak olur. Bir basamaktan fazla ise sayı , onu kabul eder.
+echo $fiyat; // 45.00 olur. Virgülden sonra 2 sıfır.
 
 
 
